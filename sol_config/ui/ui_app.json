@@ -1,0 +1,15 @@
+{
+  "name": "Sol Config",
+  "version": "2.0",
+  "author": "Peter Boese",
+  "description": "Sol Config Interface",
+  "tags": [
+    "shaders extension",
+    "ui",
+    "time",
+    "date",
+    "debug"
+  ],
+  "country": "Planet Earth",
+  "url": ""
+}

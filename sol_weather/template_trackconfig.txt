@@ -1,0 +1,173 @@
+[ABOUT]
+AUTHOR =
+VERSION = 1.0
+DATE_RELEASE = 2020 ..... ..
+LIGHTS_COUNT = ~
+NOTES =
+
+[LIGHTING]
+LIT_MULT = 1.0
+SPECULAR_MULT = 1.0
+CAR_LIGHTS_LIT_MULT = 1.0
+; ENABLE_TREES_LIGHTING = 0        ; if all your trees are not very close to a track, you can improve performance a lot by disabling trees lighting completely
+; TRACK_AMBIENT_GROUND_MULT = 0.5  ; only define it if needed! allows to redefine ambient multiplier for surfaces facing down
+; BOUNCED_LIGHT_MULT = 1, 1, 1, 1  ; multiplier for bouncing light (set to 0 if track is black, for example)
+; TERRAIN_SHADOWS_THRESHOLD = 0.0  ; ?
+
+;;; some templates for convenience, in no way complete, but helps to start quick
+;;; ALL inactive and empty atm, remove the comments ";" and fill in something
+;;; see wiki for details https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki
+
+[INCLUDE]
+INCLUDE = common\conditions.ini, common\materials_base.ini, common\materials_track.ini, common\custom_emissive.ini
+
+; [SOL]
+; EXPOSURE_FIX = 1
+; SMOG_MORNING = 0.2
+; SMOG_NOON = 0.3
+; SMOG_EVENING = 0.4
+; SUN_DAWN = 1
+; SUN_DUSK = 1
+;
+; [SOL2]
+; HORIZON_OFFSET = 0.00
+; DOME_SIZE = 35000
+; HUMIDITY_OFFSET = 0.5
+; FOG_LEVEL = 1.00
+; FOG_BLEND = 1.00
+; FOG_DISTANCE = 1.00
+
+; [EXTRA_FX]
+; SKIP_GBUFFER = ...
+
+; [BASIC]
+; RALLY_TRACK=0
+; SUPPORTS_WIND=0
+; ;;; PITBOXES=5  ;;; usually not needed
+; ;;; IGNORE_OTHER_CONFIGS = 0  ; ignore configs available in other places
+
+; [VAO]
+; OPACITY=0.8     ; override opacity of VAO patch if track has one
+; MULTIPLIER=1.2  ; override brightness multiplier of VAO patch
+
+; [WIND]
+; SUPPORTED = 1
+; DYNAMIC_FLAGS = ...
+; TREES_NORMALIZATION=0.9, 1
+; ; LAG=
+; ; RANDOMIZED_OFFSET_BASE=
+; ; RANDOMIZED_OFFSET_REL=
+; ; RANDOMIZED_OFFSET_CHANGE_SPEED=
+; ; RANDOMIZED_OFFSET_CHANGE_MAX=
+
+; [BOUNCED_LIGHT]
+; SUPPORTED = 1
+; SURFACE_MATERIALS = ...
+; OCCLUDING_MATERIALS = ...
+; OBJECT_MATERIALS=
+
+;;;
+
+; [GRASS_FX]
+; GRASS_MATERIALS =
+; OCCLUDING_MATERIALS =
+; COLOR_FACTOR=1
+; HEIGHT_MULT=1
+; EDGE_MULT=0
+; OCCLUDING_MATERIALS =
+; ; OCCLUDING_MESHES = ...
+; OCCLUDING_MATERIALS_ALPHA= ...
+; ORIGINAL_GRASS_MATERIALS = ...
+; ; very inclusive mask
+; ; MASK_MAIN_THRESHOLD = -1
+; ; MASK_RED_THRESHOLD = 0
+; ; MASK_MIN_LUMINANCE = -1
+; ; MASK_MAX_LUMINANCE = 1
+
+;;;
+
+; [MATERIAL_ADJUSTMENT_...]
+; ACTIVE = 1
+; VISIBILITY_LEVEL = 0
+; DESCRIPTION = something glowing
+; MESHES =    ;;; fill in something!
+; ; MATERIALS =    ;;; or here
+; KEY_0 = ksEmissive
+; VALUE_0 = 234,121,36,0.25
+; VALUE_0_OFF = 0
+; KEY_1 = ksAlphaRef
+; VALUE_1 = -193
+; VALUE_1_OFF = 0, 0, 0
+; CONDITION = NIGHT_SMOOTH
+
+; [LIGHT_SERIES_...]
+; ACTIVE = 1
+; VISIBILITY_LEVEL = 0
+; DESCRIPTION = something casting light
+; MESHES =       ;;; fill in something!
+; ; MATERIALS =    ;;; or here
+; OFFSET = 0,0,0
+; DIRECTION = 0,-1,0    ;;; whether use this
+; ; DIRECTION = NORMAL  ;;; or this
+; ; DIRECTION_OFFSET = 0,-0.5,0  ;;; option: change direction
+; ; DIRECTION_ALTER = 0,-0.5,0   ;;; option: change up/down
+; SPOT = 180
+; SPOT_SHARPNESS = 0.5
+; RANGE = 20
+; RANGE_GRADIENT_OFFSET = 0.1
+; FADE_AT = 500
+; FADE_SMOOTH = 25
+; CLUSTER_THRESHOLD = 20
+; DIFFUSE_CONCENTRATION = 0.9
+; COLOR = 234, 121, 36, 0.035
+; COLOR_OFF = 0
+; CONDITION = NIGHT_SMOOTH
+
+;;;
+
+; [SHADER_REPLACEMENT_...]
+; DESCRIPTION = change used shader
+; MATERIALS=...
+; SHADER=ksPerPixelMultiMap_emissive
+; RESOURCE_3=txDetail
+; RESOURCE_TEXTURE_3=....dds
+; RESOURCE_4=txEmissive
+; RESOURCE_FILE_4=....dds
+
+;;;
+
+; [Material_DigitalScreen]
+; DESCRIPTION = make jumbo screens blocky
+; Materials = ...
+; UseTextureCoordinates = 1
+; ScreenAspectRatio = 0.5    ; adjust if pixels look skewed
+; ScreenScale = 256          ; adjust for target resolution, the lower the blockier
+
+;;;
+
+; [CustomEmissive]
+; DESCRIPTION = custom emissive definition
+; MATERIALS = ...
+; Resolution = 2048, 2048
+; SHADER=ksPerPixelMultiMap_emissive
+; @ = CustomEmissive_Rect, Channel = 1, ..., CornerRadius=0.1
+; @ = CustomEmissive_Rect, Channel = 2, ..., CornerRadius=0.1
+
+; [MATERIAL_ADJUSTMENT_...]
+; DESCRIPTION = custom emissive use
+; MATERIALS = ...
+; KEY_... = ksEmissive1
+; VALUE_... = 255,255,255, 0.1
+; KEY_... = ksEmissive2
+; VALUE_... = 255,255,255, 0.1
+; KEY_... = ksAlphaRef
+; VALUE_... = -193
+; CONDITION = NIGHT_SMOOTH
+
+;;;
+
+; [RAIN_FX]
+; PUDDLES_MATERIALS =
+; SOAKING_MATERIALS =
+; SMOOTH_MATERIALS =
+; LINES_MATERIALS =

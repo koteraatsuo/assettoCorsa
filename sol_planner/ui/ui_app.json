@@ -1,0 +1,14 @@
+{
+  "name": "Sol Planner",
+  "version": "1.2",
+  "author": "Peter Boese",
+  "description": "for controlling weather and creating dynamic weather plans",
+  "tags": [
+    "shaders patch",
+    "ui",
+    "weather",
+    "debug"
+  ],
+  "country": "",
+  "url": ""
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Sol Weather App",
+  "version": "11.6",
+  "author": "x4fab, leBluem, Blamer, demonized",
+  "description": "Tool to control and debug weather and time. Contains BLM apps code.",
+  "tags": [
+    "shaders extension",
+    "ui",
+    "time",
+    "date",
+    "debug",
+    "sol",
+    "night",
+    "lights",
+    "seasons"
+  ],
+  "country": "planet earth",
+  "url": "https://trello.com/c/2Nb19GnT/12-weather-fx"
+}

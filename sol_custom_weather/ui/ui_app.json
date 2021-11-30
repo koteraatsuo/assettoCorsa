@@ -1,0 +1,14 @@
+{
+  "name": "Sol Custom Weather",
+  "version": "0.3",
+  "author": "demonized, leBluem",
+  "description": "sol_custom_weather.lua parser and editor",
+  "tags": [
+    "shaders patch",
+    "ui",
+    "weather",
+    "debug"
+  ],
+  "country": "",
+  "url": ""
+}
