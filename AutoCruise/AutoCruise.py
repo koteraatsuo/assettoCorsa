@@ -14,7 +14,7 @@ import sys
 import acsys
 from isUtils import *
 
-rootPath = "apps/python/IS_3DMap"
+rootPath = "apps/python/AutoCruise"
 configFile = rootPath + "/config.ini"
 CONFIG = None
 
@@ -44,8 +44,8 @@ def acMain(version):
 	global CONFIG
 	CONFIG = Config(configFile)
 	global appWindow
-	# appWindow = ac.newApp("AutoCruise")
-	# ac.setSize(appWindow, 400, 400)
+	appWindow = ac.newApp("AutoCruise")
+	ac.setSize(appWindow, 400, 400)
 
 	
 	global CARS
