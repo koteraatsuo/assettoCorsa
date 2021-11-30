@@ -9,6 +9,8 @@ import threading
 import time
 from operator import itemgetter
 
+from auto_control import *
+from avoid import *
 import ac
 import sys
 import acsys
