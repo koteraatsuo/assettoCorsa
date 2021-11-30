@@ -43,6 +43,10 @@ INITIALIZED = False
 def acMain(version):
 	global CONFIG
 	CONFIG = Config(configFile)
+	global appWindow
+	# appWindow = ac.newApp("AutoCruise")
+	# ac.setSize(appWindow, 400, 400)
+
 	
 	global CARS
 	CARS = [carState(i) for i in range(ac.getCarsCount())]
@@ -67,6 +71,7 @@ def acMain(version):
 	
 	global INITIALIZED
 	INITIALIZED = True
+	return "AutoCruise"
   
 
 def acUpdate(delta):
