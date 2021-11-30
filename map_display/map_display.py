@@ -961,6 +961,8 @@ class MapDisplay:
             text = text[:10]+"..."+text[-17:]
         #ac.setText(self.statusBar, text)
         ac.setTitle(appWindow, text)
+
+        sa
     
 def acMain(ac_version):
     try:
